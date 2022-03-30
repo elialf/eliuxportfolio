@@ -10,6 +10,16 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="script.js"></script>
+		<script 
+			type="text/javascript" 
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		></script>
+		<script type="text/javascript">
+			(function() {
+				emailjs.init("M1qO-ySiBEKsdut4h");
+		})();
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -226,17 +236,17 @@
 							<form method="post" action="#">
 								<div class="row">
 									<div class="col-6 col-12-mobilep">
-										<input type="text" name="name" placeholder="Name" />
+										<input type="text" id="from_name" name="name" placeholder="Name" />
 									</div>
 									<div class="col-6 col-12-mobilep">
-										<input type="email" name="email" placeholder="Email" />
+										<input type="email" id="email" name="email" placeholder="Email" />
 									</div>
 									<div class="col-12">
-										<textarea name="message" placeholder="Message" rows="6"></textarea>
+										<textarea name="message" id="msg" placeholder="Message" rows="6"></textarea>
 									</div>
 									<div class="col-12">
 										<ul class="actions special">
-											<li><input type="submit" value="Send Message" /></li>
+											<li onclick='sendMail()'><input type="submit" value="Send Message" /></li>
 										</ul>
 									</div>
 								</div>
